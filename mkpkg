@@ -237,5 +237,5 @@ ${SUDO} dpkg-deb --build ${PKG_NAME}_${PKG_VER}
 [ "${GCI}" ] || {
     [ -d ../releases ] || mkdir ../releases
     [ -d ../releases/${PKG_VER} ] || mkdir ../releases/${PKG_VER}
-    ${SUDO} cp *.deb *.gz *.zip ../releases/${PKG_VER}
+    ${SUDO} cp *.deb ../releases/${PKG_VER}
 }
