@@ -4,6 +4,7 @@
 
 1. [Overview](#overview)
 1. [Installation](#installation)
+	1. [Package Sizes](#package-sizes)
 	1. [Removal](#removal)
 1. [License](#license)
 
@@ -60,6 +61,32 @@ Use the [./mkpkg](mkpkg) script to create Debian format packages on a system wit
 the prerequisite packaging development environment. Once packages have been
 created in the source repository they can be installed by executing the
 [./Install](Install) command. Packages can be removed with [./Uninstall](Uninstall).
+
+**Note:** The Artists, Models, and Photographers image archives include images
+of artistic nudity. If you wish to avoid the display of artistic nudes, only
+install the MirrorImagesPortrait package.
+
+#### Package Sizes
+
+No image files are included in these packages. Rather, each package downloads
+image archives and extracts them into the appropriate locations. Some of these
+downloads are relatively large and require sufficient available disk space.
+
+In order to minimize disk space requirements, all packages pipe their downloads
+to stdout and extract the compressed archives via that pipe. This results in the
+following disk space requirements:
+
+- ArtistsPortrait       5.4G
+- ModelsPortrait        4.7G
+- PhotographersPortrait 500M
+- MirrorImagesPortrait  375M
+
+Prior to downloading and extracting the image archives the installation script
+will provide a prompt allowing the installer to skip larger downloads if desired.
+
+All image archives are extracted into `/usr/local/MagicMirror/pics/`
+It is possible to configure your system so that directory resides on a larger
+external drive if necessary.
 
 #### Removal
 
