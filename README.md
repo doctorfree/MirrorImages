@@ -27,7 +27,7 @@ For landscape mode images, see the
 
 These packages all depend upon the
 [MirrorCommandLine](https://gitlab.com/doctorfree/MirrorCommandLine)
-package which must be installed before installing any of these.
+package which must be previously installed.
 
 To install MirrorCommandLine:
 
@@ -53,7 +53,9 @@ sudo apt install PhotographersPortrait_<version>.deb
 ```
 
 Alternately, you can clone this repository, create your own packages, and
-install from source. To do so, clone the repository:
+install from source.
+
+To do so, clone the repository:
 
 <code>git clone `https://gitlab.com/doctorfree/MirrorImagesPortrait.git`</code>
 
