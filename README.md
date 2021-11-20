@@ -24,11 +24,26 @@ For landscape mode images, see the
 
 ## Installation
 
-To install:
+These packages all depend upon the
+[MirrorCommandLine](https://gitlab.com/doctorfree/MirrorCommandLine)
+package which must be installed before installing any of these.
+
+To install MirrorCommandLine:
+
+[Download the latest Debian package format release](https://gitlab.com/doctorfree/MirrorCommandLine/-/releases)
+
+Install the base MirrorCommandLine package by executing the command
+
+```bash
+sudo apt install MirrorCommandLine_<version>.deb
+```
+
+To install the MirrorImagePortrait packages:
 
 [Download the latest Debian package format releases](https://gitlab.com/doctorfree/MirrorImagesPortrait/-/releases)
 
 Install the MirrorImagesPortrait packages by executing the commands:
+
 ```bash
 sudo apt install MirrorImagesPortrait_<version>.deb
 sudo apt install ArtistsPortrait_<version>.deb
@@ -41,10 +56,10 @@ install from source. To do so, clone the repository:
 
 <code>git clone `https://gitlab.com/doctorfree/MirrorImagesPortrait.git`</code>
 
-Use the `mkpkg` script to create Debian format packages on a system with
+Use the [./mkpkg](mkpkg) script to create Debian format packages on a system with
 the prerequisite packaging development environment. Once packages have been
 created in the source repository they can be installed by executing the
-`./Install` command. Packages can be removed with `./Uninstall`.
+[./Install](Install) command. Packages can be removed with [./Uninstall](Uninstall).
 
 #### Removal
 
