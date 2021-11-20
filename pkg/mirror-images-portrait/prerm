@@ -1,0 +1,86 @@
+#!/bin/bash
+# prerm script for mirrorcommandline
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <prerm> `remove'
+#        * <old-prerm> `upgrade' <new-version>
+#        * <new-prerm> `failed-upgrade' <old-version>
+#        * <conflictor's-prerm> `remove' `in-favour' <package> <new-version>
+#        * <deconfigured's-prerm> `deconfigure' `in-favour'
+#          <package-being-installed> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see https://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        MM="/usr/local/MagicMirror"
+        [ -d ${MM}/pics ] && {
+          REMOVE=1
+          while true
+          do
+            read -p "Remove previously downloaded images? ('Y'/'N'): " yn
+            case $yn in
+                [Yy]*)
+                    break
+                    ;;
+                [Nn]*)
+                    REMOVE=
+                    break
+                    ;;
+                * )
+                    echo "Please answer yes or no."
+                    ;;
+            esac
+          done
+          [ "${REMOVE}" ] && {
+            if [ -f ${MM}/pics/imlist.txt ]
+            then
+              while read img
+              do
+                rm -f ${MM}/pics/${img}
+              done < ${MM}/pics/imlist.txt
+              rm -f ${MM}/pics/imlist.txt
+              for subdir in Art Fractals Gif Owls Waterfalls
+              do
+                for folder in ${MM}/pics/${subdir}/*
+                do
+                  [ "${folder}" == "${MM}/pics/${subdir}/*" ] || {
+                    rmdir --ignore-fail-on-non-empty "${folder}"
+                  }
+                done
+                rmdir --ignore-fail-on-non-empty ${MM}/pics/${subdir}
+              done
+            else
+              for subdir in Art Fractals Gif Owls Waterfalls
+              do
+                rm -rf ${MM}/pics/${subdir}
+              done
+            fi
+            # Remove any symbolic links in the pics directory
+            for folder in ${MM}/pics/*
+            do
+              [ "${folder}" == "${MM}/pics/*" ] && continue
+              [ -L "${folder}" ] && {
+                  rm -f "${folder}"
+              }
+            done
+          }
+        }
+    ;;
+
+    failed-upgrade)
+    ;;
+
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

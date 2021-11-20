@@ -1,0 +1,68 @@
+#!/bin/bash
+# postinst script for mirrorcommandline
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see https://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    configure)
+        export PATH=/usr/local/bin:$PATH
+        MM="/usr/local/MagicMirror"
+        [ -d ${MM}/pics ] || mkdir ${MM}/pics
+        cd ${MM}/pics
+        DOWNLOAD=
+        if [ -f ${MM}/pics/photogslist.txt ]
+        then
+          while read img
+          do
+            [ -f ${MM}/pics/${img} ] || {
+                DOWNLOAD=1
+                break
+            }
+          done < ${MM}/pics/photogslist.txt
+        else
+          DOWNLOAD=1
+        fi
+        [ "${DOWNLOAD}" ] && {
+          inst=`type -p pip`
+          [ "${inst}" ] || sudo apt-get install python-pip
+          pip list | grep -F gdown > /dev/null || {
+            pip install gdown
+          }
+          if [ -x ${MM}/bin/getphotogs ]
+          then
+            echo "Downloading portrait mode ${DN} image archive ..."
+            ${MM}/bin/getphotogs
+          else
+            echo "Unable to locate ${MM}/bin/getphotogs"
+            echo "Verify that MirrorCommandLine is installed and"
+            echo "${MM}/bin/getphotogs is executable, then"
+            echo "retry installation of this package."
+          fi
+        }
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0
