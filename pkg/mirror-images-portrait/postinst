@@ -1,5 +1,5 @@
 #!/bin/bash
-# postinst script for mirrorcommandline
+# postinst script for mirror-images-portrait
 #
 # see: dh_installdeb(1)
 

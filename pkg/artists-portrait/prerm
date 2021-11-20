@@ -1,5 +1,5 @@
 #!/bin/bash
-# prerm script for mirrorcommandline
+# prerm script for artists-portrait
 #
 # see: dh_installdeb(1)
 
