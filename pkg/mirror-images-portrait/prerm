@@ -51,10 +51,12 @@ case "$1" in
                 for folder in ${MM}/pics/${subdir}/*
                 do
                   [ "${folder}" == "${MM}/pics/${subdir}/*" ] || {
-                    rmdir --ignore-fail-on-non-empty "${folder}"
+                    [ -d "${folder}" ] && rmdir --ignore-fail-on-non-empty "${folder}"
                   }
                 done
-                rmdir --ignore-fail-on-non-empty ${MM}/pics/${subdir}
+                [ -d ${MM}/pics/${subdir} ] && {
+                    rmdir --ignore-fail-on-non-empty ${MM}/pics/${subdir}
+                }
               done
             else
               for subdir in Art Fractals Gif Owls Waterfalls

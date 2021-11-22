@@ -46,8 +46,14 @@ case "$1" in
                 rm -f ${MM}/pics/${img}
               done < ${MM}/pics/photogslist.txt
               rm -f ${MM}/pics/photogslist.txt
-              rmdir --ignore-fail-on-non-empty ${MM}/pics/Photographers/*
-              rmdir --ignore-fail-on-non-empty ${MM}/pics/Photographers
+              for subdir in ${MM}/pics/Photographers/*
+              do
+                [ "${subdir}" == "${MM}/pics/Photographers/*" ] && continue
+                [ -d ${subdir} ] && rmdir --ignore-fail-on-non-empty ${subdir}
+              done
+              [ -d ${MM}/pics/Photographers ] && {
+                rmdir --ignore-fail-on-non-empty ${MM}/pics/Photographers
+              }
             else
               rm -rf ${MM}/pics/Photographers
             fi

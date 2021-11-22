@@ -54,7 +54,7 @@ echo "Package: ${PKG}
 Version: ${PKG_VER}
 Section: misc
 Priority: optional
-Architecture: armhf
+Architecture: any
 Depends: mirrorcommandline (>= 2.5)
 Installled-Size: 375000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
@@ -103,7 +103,7 @@ echo "Package: ${PKG}
 Version: ${PKG_VER}
 Section: misc
 Priority: optional
-Architecture: armhf
+Architecture: any
 Depends: mirrorcommandline (>= 2.5)
 Installled-Size: 500000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
@@ -152,7 +152,7 @@ echo "Package: ${PKG}
 Version: ${PKG_VER}
 Section: misc
 Priority: optional
-Architecture: armhf
+Architecture: any
 Depends: mirrorcommandline (>= 2.5)
 Installled-Size: 5400000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
@@ -201,7 +201,7 @@ echo "Package: ${PKG}
 Version: ${PKG_VER}
 Section: misc
 Priority: optional
-Architecture: armhf
+Architecture: any
 Depends: mirrorcommandline (>= 2.5)
 Installled-Size: 4700000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
