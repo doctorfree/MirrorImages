@@ -4,7 +4,7 @@ SRC_NAME="MirrorImagesPortrait"
 PKG_NAME="MirrorImagesPortrait"
 TOP="usr"
 DESTDIR="${TOP}/local"
-MM="${DESTDIR}/MagicMirror"
+MM="${DESTDIR}/MirrorCommandLine"
 SRC=${HOME}/src
 SUDO=sudo
 GCI=
@@ -29,6 +29,7 @@ dpkg=`type -p dpkg-deb`
 
 . "${SRC}/${SRC_NAME}/VERSION"
 PKG_VER=${VERSION}
+PKG_REL=${RELEASE}
 
 # umask 0022
 
@@ -51,7 +52,7 @@ cp -a pkg/mirror-images-portrait ${OUT_DIR}/DEBIAN
 chmod 755 ${OUT_DIR} ${OUT_DIR}/DEBIAN ${OUT_DIR}/DEBIAN/*
 
 echo "Package: ${PKG}
-Version: ${PKG_VER}
+Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
@@ -84,8 +85,8 @@ ${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
 ${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
 
 cd dist
-echo "Building ${PKG_NAME}_${PKG_VER} package"
-${SUDO} dpkg-deb --build ${PKG_NAME}_${PKG_VER}
+echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
+${SUDO} dpkg --build ${PKG_NAME}_${PKG_VER} ${PKG_NAME}_${PKG_VER}-${PKG_REL}.deb
 
 cd "${SRC}/${SRC_NAME}"
 
@@ -100,7 +101,7 @@ cp -a pkg/photographers-portrait ${OUT_DIR}/DEBIAN
 chmod 755 ${OUT_DIR} ${OUT_DIR}/DEBIAN ${OUT_DIR}/DEBIAN/*
 
 echo "Package: ${PKG}
-Version: ${PKG_VER}
+Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
@@ -133,8 +134,8 @@ ${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
 ${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
 
 cd dist
-echo "Building ${PKG_NAME}_${PKG_VER} package"
-${SUDO} dpkg-deb --build ${PKG_NAME}_${PKG_VER}
+echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
+${SUDO} dpkg --build ${PKG_NAME}_${PKG_VER} ${PKG_NAME}_${PKG_VER}-${PKG_REL}.deb
 
 cd "${SRC}/${SRC_NAME}"
 
@@ -149,7 +150,7 @@ cp -a pkg/artists-portrait ${OUT_DIR}/DEBIAN
 chmod 755 ${OUT_DIR} ${OUT_DIR}/DEBIAN ${OUT_DIR}/DEBIAN/*
 
 echo "Package: ${PKG}
-Version: ${PKG_VER}
+Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
@@ -182,8 +183,8 @@ ${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
 ${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
 
 cd dist
-echo "Building ${PKG_NAME}_${PKG_VER} package"
-${SUDO} dpkg-deb --build ${PKG_NAME}_${PKG_VER}
+echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
+${SUDO} dpkg --build ${PKG_NAME}_${PKG_VER} ${PKG_NAME}_${PKG_VER}-${PKG_REL}.deb
 
 cd "${SRC}/${SRC_NAME}"
 
@@ -198,7 +199,7 @@ cp -a pkg/models-portrait ${OUT_DIR}/DEBIAN
 chmod 755 ${OUT_DIR} ${OUT_DIR}/DEBIAN ${OUT_DIR}/DEBIAN/*
 
 echo "Package: ${PKG}
-Version: ${PKG_VER}
+Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
@@ -231,8 +232,8 @@ ${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
 ${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
 
 cd dist
-echo "Building ${PKG_NAME}_${PKG_VER} package"
-${SUDO} dpkg-deb --build ${PKG_NAME}_${PKG_VER}
+echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
+${SUDO} dpkg --build ${PKG_NAME}_${PKG_VER} ${PKG_NAME}_${PKG_VER}-${PKG_REL}.deb
 
 [ "${GCI}" ] || {
     [ -d ../releases ] || mkdir ../releases

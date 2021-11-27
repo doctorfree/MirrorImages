@@ -86,7 +86,7 @@ following disk space requirements:
 Prior to downloading and extracting the image archives the installation script
 will provide a prompt allowing the installer to skip larger downloads if desired.
 
-All image archives are extracted into `/usr/local/MagicMirror/pics/`
+All image archives are extracted into `/usr/local/MirrorCommandLine/pics/`
 It is possible to configure your system so that directory resides on a larger
 external drive if necessary.
 
