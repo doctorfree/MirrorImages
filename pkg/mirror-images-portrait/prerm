@@ -51,11 +51,23 @@ case "$1" in
                 for folder in ${MM}/pics/${subdir}/*
                 do
                   [ "${folder}" == "${MM}/pics/${subdir}/*" ] || {
-                    [ -d "${folder}" ] && rmdir --ignore-fail-on-non-empty "${folder}"
+                    [ -d ${folder} ] && {
+                      if [ -L ${folder} ]
+                      then
+                        rm -f ${folder}
+                      else
+                        rmdir --ignore-fail-on-non-empty ${folder}
+                      fi
+                    }
                   }
                 done
                 [ -d ${MM}/pics/${subdir} ] && {
+                  if [ -L ${MM}/pics/${subdir} ]
+                  then
+                    rm -f ${MM}/pics/${subdir}
+                  else
                     rmdir --ignore-fail-on-non-empty ${MM}/pics/${subdir}
+                  fi
                 }
               done
             else

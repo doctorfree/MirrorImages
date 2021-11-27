@@ -49,10 +49,22 @@ case "$1" in
               for subdir in ${MM}/pics/Artists/*
               do
                 [ "${subdir}" == "${MM}/pics/Artists/*" ] && continue
-                [ -d ${subdir} ] && rmdir --ignore-fail-on-non-empty ${subdir}
+                [ -d ${subdir} ] && {
+                  if [ -L ${subdir} ]
+                  then
+                    rm -f ${subdir}
+                  else
+                    rmdir --ignore-fail-on-non-empty ${subdir}
+                  fi
+                }
               done
               [ -d ${MM}/pics/Artists ] && {
-                rmdir --ignore-fail-on-non-empty ${MM}/pics/Artists
+                if [ -L ${MM}/pics/Artists ]
+                then
+                  rm -f ${MM}/pics/Artists
+                else
+                  rmdir --ignore-fail-on-non-empty ${MM}/pics/Artists
+                fi
               }
             else
               rm -rf ${MM}/pics/Artists
