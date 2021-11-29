@@ -240,7 +240,7 @@ cd "${SRC}/${SRC_NAME}"
 PKG="tantra-tutorial"
 PKG_NAME="TantraTutorial"
 # Subdirectory in which to create the distribution files
-OUT_DIR="dist/${PKG_NAME}_${PKG_VER}-${PKG_REL}"
+OUT_DIR="dist/${PKG_NAME}_${PKG_VER}"
 
 [ -d ${OUT_DIR} ] && rm -rf ${OUT_DIR}
 mkdir ${OUT_DIR}
