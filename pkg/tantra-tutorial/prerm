@@ -1,5 +1,5 @@
 #!/bin/bash
-# prerm script for photographers-portrait
+# prerm script for tantra-tutorial
 #
 # see: dh_installdeb(1)
 
@@ -20,11 +20,11 @@ set -e
 case "$1" in
     remove|upgrade|deconfigure)
         MM="/usr/local/MirrorCommandLine"
-        [ -d ${MM}/pics ] && {
+        [ -d ${MM}/movies ] && {
           REMOVE=1
           while true
           do
-            read -p "Remove previously downloaded Photographer images? ('Y'/'N'): " yn
+            read -p "Remove previously downloaded videos? ('Y'/'N'): " yn
             case $yn in
                 [Yy]*)
                     break
@@ -39,24 +39,39 @@ case "$1" in
             esac
           done
           [ "${REMOVE}" ] && {
-            if [ -f ${MM}/pics/photogslist.txt ]
+            if [ -f ${MM}/movies/tantralist.txt ]
             then
               while read img
               do
-                rm -f ${MM}/pics/${img}
-              done < ${MM}/pics/photogslist.txt
-              rm -f ${MM}/pics/photogslist.txt
-              for subdir in ${MM}/pics/Photographers/*
+                rm -f ${MM}/movies/${img}
+              done < ${MM}/movies/tantralist.txt
+              rm -f ${MM}/movies/tantralist.txt
+              for subdir in Tantra
               do
-                [ "${subdir}" == "${MM}/pics/Photographers/*" ] && continue
-                [ -d ${subdir} ] && rmdir --ignore-fail-on-non-empty ${subdir}
+                for folder in ${MM}/movies/${subdir}/*
+                do
+                  [ "${folder}" == "${MM}/movies/${subdir}/*" ] || {
+                    [ -d "${folder}" ] && rmdir --ignore-fail-on-non-empty "${folder}"
+                  }
+                done
+                [ -d ${MM}/movies/${subdir} ] && {
+                    rmdir --ignore-fail-on-non-empty ${MM}/movies/${subdir}
+                }
               done
-              [ -d ${MM}/pics/Photographers ] && {
-                rmdir --ignore-fail-on-non-empty ${MM}/pics/Photographers
-              }
             else
-              rm -rf ${MM}/pics/Photographers
+              for subdir in Tantra
+              do
+                rm -rf ${MM}/movies/${subdir}
+              done
             fi
+            # Remove any symbolic links in the movies directory
+            for folder in ${MM}/movies/*
+            do
+              [ "${folder}" == "${MM}/movies/*" ] && continue
+              [ -L "${folder}" ] && {
+                  rm -f "${folder}"
+              }
+            done
           }
         }
     ;;

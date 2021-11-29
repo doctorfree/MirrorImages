@@ -1,5 +1,5 @@
 #!/bin/bash
-# postinst script for mirror-images-portrait
+# postinst script for tantra-tutorial
 #
 # see: dh_installdeb(1)
 
@@ -22,18 +22,18 @@ case "$1" in
     configure)
         export PATH=/usr/local/bin:$PATH
         MM="/usr/local/MirrorCommandLine"
-        [ -d ${MM}/pics ] || mkdir ${MM}/pics
-        cd ${MM}/pics
+        [ -d ${MM}/movies ] || mkdir ${MM}/movies
+        cd ${MM}/movies
         DOWNLOAD=
-        if [ -f ${MM}/pics/imlist.txt ]
+        if [ -f ${MM}/movies/tantralist.txt ]
         then
           while read img
           do
-            [ -f ${MM}/pics/${img} ] || {
+            [ -f ${MM}/movies/${img} ] || {
                 DOWNLOAD=1
                 break
             }
-          done < ${MM}/pics/imlist.txt
+          done < ${MM}/movies/tantralist.txt
         else
           DOWNLOAD=1
         fi
@@ -43,14 +43,14 @@ case "$1" in
           pip list | grep -F gdown > /dev/null || {
             pip install gdown
           }
-          if [ -x ${MM}/bin/getimages ]
+          if [ -x ${MM}/bin/gettantra ]
           then
-            echo "Downloading portrait mode image archive ..."
-            ${MM}/bin/getimages
+            echo "Downloading tantra tutorial archive ..."
+            ${MM}/bin/gettantra
           else
-            echo "Unable to locate ${MM}/bin/getimages"
+            echo "Unable to locate ${MM}/bin/gettantra"
             echo "Verify that MirrorCommandLine is installed and"
-            echo "${MM}/bin/getimages is executable, then"
+            echo "${MM}/bin/gettantra is executable, then"
             echo "retry installation of this package."
           fi
         }

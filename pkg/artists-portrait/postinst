@@ -21,7 +21,7 @@ set -e
 case "$1" in
     configure)
         export PATH=/usr/local/bin:$PATH
-        MM="/usr/local/MagicMirror"
+        MM="/usr/local/MirrorCommandLine"
         [ -d ${MM}/pics ] || mkdir ${MM}/pics
         cd ${MM}/pics
         DOWNLOAD=

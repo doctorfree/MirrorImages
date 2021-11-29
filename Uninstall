@@ -3,6 +3,7 @@
 for pkg in artists-portrait \
            models-portrait \
            photographers-portrait \
+           tantra-tutorial \
            mirror-images-portrait
 do
     dpkg -s ${pkg} > /dev/null 2>&1

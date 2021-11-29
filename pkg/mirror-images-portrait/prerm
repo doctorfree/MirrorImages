@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-        MM="/usr/local/MagicMirror"
+        MM="/usr/local/MirrorCommandLine"
         [ -d ${MM}/pics ] && {
           REMOVE=1
           while true

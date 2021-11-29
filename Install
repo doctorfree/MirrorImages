@@ -12,8 +12,10 @@
 # sudo apt-get install -f
 
 SRC_NAME="MirrorImagesPortrait"
-PKG_NAMES="MirrorImagesPortrait ArtistsPortrait ModelsPortrait PhotographersPortrait"
-APT_NAMES="mirror-images-portrait artists-portrait models-portrait photographers-portrait"
+PKG_NAMES="MirrorImagesPortrait ArtistsPortrait ModelsPortrait \
+           PhotographersPortrait TantraTutorial"
+APT_NAMES="mirror-images-portrait artists-portrait models-portrait \
+           photographers-portrait tantra-tutorial"
 SRC="${HOME}/src"
 
 PKG_INSTALLED=
@@ -59,6 +61,9 @@ get_installed_packages() {
             ;;
         "photographers-portrait")
             PKG_INSTALLED="${PKG_INSTALLED} PhotographersPortrait"
+            ;;
+        "tantra-tutorial")
+            PKG_INSTALLED="${PKG_INSTALLED} ModelsPortrait"
             ;;
        esac
     }
