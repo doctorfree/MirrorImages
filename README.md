@@ -50,6 +50,7 @@ sudo apt install MirrorImagesPortrait_<version>.deb
 sudo apt install ArtistsPortrait_<version>.deb
 sudo apt install ModelsPortrait_<version>.deb
 sudo apt install PhotographersPortrait_<version>.deb
+sudo apt install TantraTutorial_<version>.deb
 ```
 
 Alternately, you can clone this repository, create your own packages, and
@@ -64,9 +65,9 @@ the prerequisite packaging development environment. Once packages have been
 created in the source repository they can be installed by executing the
 [./Install](Install) command. Packages can be removed with [./Uninstall](Uninstall).
 
-**Note:** The Artists, Models, and Photographers image archives include images
-of artistic nudity. If you wish to avoid the display of artistic nudes, only
-install the MirrorImagesPortrait package.
+**Note:** The Artists, Models, TantraTutorial, and Photographers image archives
+include images of artistic nudity. If you wish to avoid the display of artistic
+nudes, only install the MirrorImagesPortrait package.
 
 #### Package Sizes
 
@@ -81,14 +82,16 @@ following disk space requirements:
 - ArtistsPortrait       5.4G
 - ModelsPortrait        4.7G
 - PhotographersPortrait 500M
+- TantraTutorial        387M
 - MirrorImagesPortrait  375M
 
 Prior to downloading and extracting the image archives the installation script
 will provide a prompt allowing the installer to skip larger downloads if desired.
 
 All image archives are extracted into `/usr/local/MirrorCommandLine/pics/`
-It is possible to configure your system so that directory resides on a larger
-external drive if necessary.
+and `/usr/local/MirrorCommandLine/movies/`
+It is possible to configure your system so that those directories reside
+on a larger external drive if necessary.
 
 #### Removal
 
