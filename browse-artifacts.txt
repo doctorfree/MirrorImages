@@ -1,0 +1,6 @@
+
+For job ref 1830237762 and job name 'run-build'
+
+Browse artifacts
+
+https://gitlab.com/doctorfree/MirrorImagesPortrait/-/jobs/1830237762/artifacts/browse?job=run-build
