@@ -64,7 +64,7 @@ get_installed_packages() {
             PKG_INSTALLED="${PKG_INSTALLED} PhotographersPortrait"
             ;;
         "tantra-tutorial")
-            PKG_INSTALLED="${PKG_INSTALLED} ModelsPortrait"
+            PKG_INSTALLED="${PKG_INSTALLED} TantraTutorial"
             ;;
        esac
     }
