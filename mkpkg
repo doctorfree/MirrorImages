@@ -232,8 +232,8 @@ ${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
 ${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
 
 cd dist
-echo "Building ${PKG_NAME}_${PKG_VER} package"
-${SUDO} dpkg --build ${PKG_NAME}_${PKG_VER}
+echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
+${SUDO} dpkg --build ${PKG_NAME}_${PKG_VER} ${PKG_NAME}_${PKG_VER}-${PKG_REL}.deb
 
 cd "${SRC}/${SRC_NAME}"
 
