@@ -21,7 +21,7 @@ set -e
 case "$1" in
     configure)
         export PATH=/usr/local/bin:$PATH
-        MM="/usr/local/MirrorCommandLine"
+        MM="/usr/local/MirrorCommand"
         [ -d ${MM}/pics ] || mkdir ${MM}/pics
         cd ${MM}/pics
         DOWNLOAD=
@@ -49,7 +49,7 @@ case "$1" in
             ${MM}/bin/getmodels
           else
             echo "Unable to locate ${MM}/bin/getmodels"
-            echo "Verify that MirrorCommandLine is installed and"
+            echo "Verify that MirrorCommand is installed and"
             echo "${MM}/bin/getmodels is executable, then"
             echo "retry installation of this package."
           fi

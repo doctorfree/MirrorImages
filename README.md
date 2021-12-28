@@ -10,14 +10,14 @@
 
 ## Overview
 
-The [MirrorCommandLine](https://gitlab.com/doctorfree/MirrorCommandLine) project
+The [MirrorCommand](https://gitlab.com/doctorfree/MirrorCommand) project
 creates config files for a [MagicMirror](https://magicmirror.builders/). Many of
-these config files are used to display images located in the MirrorCommandLine
+these config files are used to display images located in the MirrorCommand
 installation folders. However, these images are not installed by default in the
-base MirrorCommandLine package as they are not required for most of the
+base MirrorCommand package as they are not required for most of the
 functionality of the MagicMirror. In order to enable preconfigured image display
-of the MirrorCommandLine config files, install these packages on a MagicMirror
-which has the MirrorCommandLine package installed.
+of the MirrorCommand config files, install these packages on a MagicMirror
+which has the MirrorCommand package installed.
 
 The images in these packages have been tailored for a MagicMirror in portrait mode.
 For landscape mode images, see the
@@ -26,17 +26,17 @@ For landscape mode images, see the
 ## Installation
 
 These packages all depend upon the
-[MirrorCommandLine](https://gitlab.com/doctorfree/MirrorCommandLine)
+[MirrorCommand](https://gitlab.com/doctorfree/MirrorCommand)
 package which must be previously installed.
 
-To install MirrorCommandLine:
+To install MirrorCommand:
 
-[Download the latest Debian package format release](https://gitlab.com/doctorfree/MirrorCommandLine/-/releases)
+[Download the latest Debian package format release](https://gitlab.com/doctorfree/MirrorCommand/-/releases)
 
-Install the base MirrorCommandLine package by executing the command
+Install the base MirrorCommand package by executing the command
 
 ```bash
-sudo apt install MirrorCommandLine_<version>.deb
+sudo apt install MirrorCommand<version>.deb
 ```
 
 To install the MirrorImagePortrait packages:
@@ -88,8 +88,8 @@ following disk space requirements:
 Prior to downloading and extracting the image archives the installation script
 will provide a prompt allowing the installer to skip larger downloads if desired.
 
-All image archives are extracted into `/usr/local/MirrorCommandLine/pics/`
-and `/usr/local/MirrorCommandLine/movies/`
+All image archives are extracted into `/usr/local/MirrorCommand/pics/`
+and `/usr/local/MirrorCommand/movies/`
 It is possible to configure your system so that those directories reside
 on a larger external drive if necessary.
 

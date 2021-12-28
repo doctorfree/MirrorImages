@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-        MM="/usr/local/MirrorCommandLine"
+        MM="/usr/local/MirrorCommand"
         [ -d ${MM}/movies ] && {
           REMOVE=1
           while true

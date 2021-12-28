@@ -4,7 +4,7 @@ SRC_NAME="MirrorImagesPortrait"
 PKG_NAME="MirrorImagesPortrait"
 TOP="usr"
 DESTDIR="${TOP}/local"
-MM="${DESTDIR}/MirrorCommandLine"
+MM="${DESTDIR}/MirrorCommand"
 SRC=${HOME}/src
 SUDO=sudo
 GCI=
@@ -56,14 +56,14 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommandline (>= 2.5)
+Depends: mirrorcommand (>= 2.5)
 Installled-Size: 375000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
 Description: MagicMirror Images
- Images for a MagicMirror using the MirrorCommandLine configs" > ${OUT_DIR}/DEBIAN/control
+ Images for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
@@ -105,14 +105,14 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommandline (>= 2.5)
+Depends: mirrorcommand (>= 2.5)
 Installled-Size: 500000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
 Description: MagicMirror Photographer Images
- Photographer Images for a MagicMirror using the MirrorCommandLine configs" > ${OUT_DIR}/DEBIAN/control
+ Photographer Images for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
@@ -154,14 +154,14 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommandline (>= 2.5)
+Depends: mirrorcommand (>= 2.5)
 Installled-Size: 5400000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
 Description: MagicMirror Artists Images
- Artists Images for a MagicMirror using the MirrorCommandLine configs" > ${OUT_DIR}/DEBIAN/control
+ Artists Images for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
@@ -203,14 +203,14 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommandline (>= 2.5)
+Depends: mirrorcommand (>= 2.5)
 Installled-Size: 4700000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
 Description: MagicMirror Models Images
- Models Images for a MagicMirror using the MirrorCommandLine configs" > ${OUT_DIR}/DEBIAN/control
+ Models Images for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
@@ -252,14 +252,14 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommandline (>= 2.5)
+Depends: mirrorcommand (>= 2.5)
 Installled-Size: 4700000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
 Description: MagicMirror Tantra Tutorial
- Tantra Tutorial videos for a MagicMirror using the MirrorCommandLine configs" > ${OUT_DIR}/DEBIAN/control
+ Tantra Tutorial videos for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
