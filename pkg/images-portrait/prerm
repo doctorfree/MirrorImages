@@ -1,5 +1,5 @@
 #!/bin/bash
-# prerm script for mirror-images-portrait
+# prerm script for images-portrait
 #
 # see: dh_installdeb(1)
 
