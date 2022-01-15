@@ -37,7 +37,7 @@ To install MirrorCommand:
 Install the base MirrorCommand package by executing the command
 
 ```bash
-sudo apt install MirrorCommand<version>.deb
+sudo apt install MirrorCommand_<version>-<release>.deb
 ```
 
 To install the MirrorImage packages:
@@ -47,11 +47,11 @@ To install the MirrorImage packages:
 Install the MirrorImages packages by executing the commands:
 
 ```bash
-sudo apt install ImagesPortrait_<version>.deb
-sudo apt install ArtistsPortrait_<version>.deb
-sudo apt install ModelsPortrait_<version>.deb
-sudo apt install PhotographersPortrait_<version>.deb
-sudo apt install TantraTutorial_<version>.deb
+sudo apt install ImagesPortrait_<version>-<release>.deb
+sudo apt install ArtistsPortrait_<version>-<release>.deb
+sudo apt install ModelsPortrait_<version>-<release>.deb
+sudo apt install PhotographersPortrait_<version>-<release>.deb
+sudo apt install TantraTutorial_<version>-<release>.deb
 ```
 
 Alternately, you can clone this repository, create your own packages, and

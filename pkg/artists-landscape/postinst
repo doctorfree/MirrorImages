@@ -1,0 +1,69 @@
+#!/bin/bash
+# postinst script for artists-landscape
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see https://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    configure)
+        export PATH=/usr/local/bin:$PATH
+        MM="/usr/local/MirrorCommand"
+        PICDIR="${MM}/pics-landscape"
+        [ -d ${PICDIR} ] || mkdir ${PICDIR}
+        cd ${PICDIR}
+        DOWNLOAD=
+        if [ -f ${PICDIR}/artistslist.txt ]
+        then
+          while read img
+          do
+            [ -f ${PICDIR}/${img} ] || {
+                DOWNLOAD=1
+                break
+            }
+          done < ${PICDIR}/artistslist.txt
+        else
+          DOWNLOAD=1
+        fi
+        [ "${DOWNLOAD}" ] && {
+          inst=`type -p pip`
+          [ "${inst}" ] || sudo apt-get install python-pip
+          pip list | grep -F gdown > /dev/null || {
+            pip install gdown
+          }
+          if [ -x ${MM}/bin/getartists ]
+          then
+            echo "Downloading landscape mode Artists image archive ..."
+            ${MM}/bin/getartists -l
+          else
+            echo "Unable to locate ${MM}/bin/getartists"
+            echo "Verify that MirrorCommand is installed and"
+            echo "${MM}/bin/getartists is executable, then"
+            echo "retry installation of this package."
+          fi
+        }
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

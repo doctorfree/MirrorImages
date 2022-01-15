@@ -1,0 +1,100 @@
+#!/bin/bash
+# prerm script for images-landscape
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <prerm> `remove'
+#        * <old-prerm> `upgrade' <new-version>
+#        * <new-prerm> `failed-upgrade' <old-version>
+#        * <conflictor's-prerm> `remove' `in-favour' <package> <new-version>
+#        * <deconfigured's-prerm> `deconfigure' `in-favour'
+#          <package-being-installed> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see https://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        MM="/usr/local/MirrorCommand"
+        [ -d ${MM}/pics-landscape ] && {
+          REMOVE=1
+          while true
+          do
+            read -p "Remove previously downloaded images? ('Y'/'N'): " yn
+            case $yn in
+                [Yy]*)
+                    break
+                    ;;
+                [Nn]*)
+                    REMOVE=
+                    break
+                    ;;
+                * )
+                    echo "Please answer yes or no."
+                    ;;
+            esac
+          done
+          [ "${REMOVE}" ] && {
+            if [ -f ${MM}/pics-landscape/imlist.txt ]
+            then
+              while read img
+              do
+                rm -f ${MM}/pics-landscape/${img}
+              done < ${MM}/pics-landscape/imlist.txt
+              rm -f ${MM}/pics-landscape/imlist.txt
+              for subdir in Art Fractals Gif Owls Waterfalls
+              do
+                for folder in ${MM}/pics-landscape/${subdir}/*
+                do
+                  [ "${folder}" == "${MM}/pics-landscape/${subdir}/*" ] || {
+                    [ -d ${folder} ] && {
+                      if [ -L ${folder} ]
+                      then
+                        rm -f ${folder}
+                      else
+                        rmdir --ignore-fail-on-non-empty ${folder}
+                      fi
+                    }
+                  }
+                done
+                [ -d ${MM}/pics-landscape/${subdir} ] && {
+                  if [ -L ${MM}/pics-landscape/${subdir} ]
+                  then
+                    rm -f ${MM}/pics-landscape/${subdir}
+                  else
+                    rmdir --ignore-fail-on-non-empty ${MM}/pics-landscape/${subdir}
+                  fi
+                }
+              done
+            else
+              for subdir in Art Fractals Gif Owls Waterfalls
+              do
+                rm -rf ${MM}/pics-landscape/${subdir}
+              done
+            fi
+            # Remove any symbolic links in the pics-landscape directory
+            for folder in ${MM}/pics-landscape/*
+            do
+              [ "${folder}" == "${MM}/pics-landscape/*" ] && continue
+              [ -L "${folder}" ] && {
+                  rm -f "${folder}"
+              }
+            done
+          }
+        }
+    ;;
+
+    failed-upgrade)
+    ;;
+
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0
