@@ -56,33 +56,33 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommand (>= 2.5)
+Depends: mirrorcommand (>= 3.0.0)
 Installled-Size: 375000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
-Description: MagicMirror Images
+Description: MagicMirror Portrait Format Images
  Images for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
-for dir in "${TOP}" "${DESTDIR}" "${MM}" "${TOP}/share" \
-           "${TOP}/share/doc" "${TOP}/share/doc/${PKG}"
+for dir in "${TOP}" "${DESTDIR}" "${MM}" "${DESTDIR}/share" \
+           "${DESTDIR}/share/doc" "${DESTDIR}/share/doc/${PKG}"
 do
     [ -d ${OUT_DIR}/${dir} ] || ${SUDO} mkdir ${OUT_DIR}/${dir}
     ${SUDO} chown root:root ${OUT_DIR}/${dir}
 done
 
 [ -d ${OUT_DIR}/${MM} ] || ${SUDO} mkdir ${OUT_DIR}/${MM}
-[ -d ${OUT_DIR}/${MM}/pics ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/pics
-[ -f pics/imlist.txt ] && ${SUDO} cp pics/imlist.txt ${OUT_DIR}/${MM}/pics
+[ -d ${OUT_DIR}/${MM}/pics-portrait ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/pics-portrait
+[ -f pics-portrait/imlist.txt ] && ${SUDO} cp pics-portrait/imlist.txt ${OUT_DIR}/${MM}/pics-portrait
 
-${SUDO} cp AUTHORS ${OUT_DIR}/${TOP}/share/doc/${PKG}/AUTHORS
-${SUDO} cp LICENSE ${OUT_DIR}/${TOP}/share/doc/${PKG}/copyright
-${SUDO} cp CHANGELOG.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
-${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
-${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
+${SUDO} cp AUTHORS ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/AUTHORS
+${SUDO} cp LICENSE ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/copyright
+${SUDO} cp CHANGELOG.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
+${SUDO} cp README.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README
+${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
 
 cd dist
 echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
@@ -105,33 +105,33 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommand (>= 2.5)
+Depends: mirrorcommand (>= 3.0.0)
 Installled-Size: 500000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
-Description: MagicMirror Photographer Images
+Description: MagicMirror Portrait Format Photographer Images
  Photographer Images for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
-for dir in "${TOP}" "${DESTDIR}" "${MM}" "${TOP}/share" \
-           "${TOP}/share/doc" "${TOP}/share/doc/${PKG}"
+for dir in "${TOP}" "${DESTDIR}" "${MM}" "${DESTDIR}/share" \
+           "${DESTDIR}/share/doc" "${DESTDIR}/share/doc/${PKG}"
 do
     [ -d ${OUT_DIR}/${dir} ] || ${SUDO} mkdir ${OUT_DIR}/${dir}
     ${SUDO} chown root:root ${OUT_DIR}/${dir}
 done
 
 [ -d ${OUT_DIR}/${MM} ] || ${SUDO} mkdir ${OUT_DIR}/${MM}
-[ -d ${OUT_DIR}/${MM}/pics ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/pics
-[ -f pics/photogslist.txt ] && ${SUDO} cp pics/photogslist.txt ${OUT_DIR}/${MM}/pics
+[ -d ${OUT_DIR}/${MM}/pics-portrait ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/pics-portrait
+[ -f pics-portrait/photogslist.txt ] && ${SUDO} cp pics-portrait/photogslist.txt ${OUT_DIR}/${MM}/pics-portrait
 
-${SUDO} cp AUTHORS ${OUT_DIR}/${TOP}/share/doc/${PKG}/AUTHORS
-${SUDO} cp LICENSE ${OUT_DIR}/${TOP}/share/doc/${PKG}/copyright
-${SUDO} cp CHANGELOG.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
-${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
-${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
+${SUDO} cp AUTHORS ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/AUTHORS
+${SUDO} cp LICENSE ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/copyright
+${SUDO} cp CHANGELOG.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
+${SUDO} cp README.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README
+${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
 
 cd dist
 echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
@@ -154,33 +154,33 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommand (>= 2.5)
+Depends: mirrorcommand (>= 3.0.0)
 Installled-Size: 5400000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
-Description: MagicMirror Artists Images
+Description: MagicMirror Portrait Format Artists Images
  Artists Images for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
-for dir in "${TOP}" "${DESTDIR}" "${MM}" "${TOP}/share" \
-           "${TOP}/share/doc" "${TOP}/share/doc/${PKG}"
+for dir in "${TOP}" "${DESTDIR}" "${MM}" "${DESTDIR}/share" \
+           "${DESTDIR}/share/doc" "${DESTDIR}/share/doc/${PKG}"
 do
     [ -d ${OUT_DIR}/${dir} ] || ${SUDO} mkdir ${OUT_DIR}/${dir}
     ${SUDO} chown root:root ${OUT_DIR}/${dir}
 done
 
 [ -d ${OUT_DIR}/${MM} ] || ${SUDO} mkdir ${OUT_DIR}/${MM}
-[ -d ${OUT_DIR}/${MM}/pics ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/pics
-[ -f pics/artistslist.txt ] && ${SUDO} cp pics/artistslist.txt ${OUT_DIR}/${MM}/pics
+[ -d ${OUT_DIR}/${MM}/pics-portrait ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/pics-portrait
+[ -f pics-portrait/artistslist.txt ] && ${SUDO} cp pics-portrait/artistslist.txt ${OUT_DIR}/${MM}/pics-portrait
 
-${SUDO} cp AUTHORS ${OUT_DIR}/${TOP}/share/doc/${PKG}/AUTHORS
-${SUDO} cp LICENSE ${OUT_DIR}/${TOP}/share/doc/${PKG}/copyright
-${SUDO} cp CHANGELOG.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
-${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
-${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
+${SUDO} cp AUTHORS ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/AUTHORS
+${SUDO} cp LICENSE ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/copyright
+${SUDO} cp CHANGELOG.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
+${SUDO} cp README.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README
+${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
 
 cd dist
 echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
@@ -203,33 +203,33 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommand (>= 2.5)
+Depends: mirrorcommand (>= 3.0.0)
 Installled-Size: 4700000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://gitlab.com/doctorfree/MirrorImagesPortrait
-Description: MagicMirror Models Images
+Description: MagicMirror Portrait Format Models Images
  Models Images for a MagicMirror using the MirrorCommand configs" > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
-for dir in "${TOP}" "${DESTDIR}" "${MM}" "${TOP}/share" \
-           "${TOP}/share/doc" "${TOP}/share/doc/${PKG}"
+for dir in "${TOP}" "${DESTDIR}" "${MM}" "${DESTDIR}/share" \
+           "${DESTDIR}/share/doc" "${DESTDIR}/share/doc/${PKG}"
 do
     [ -d ${OUT_DIR}/${dir} ] || ${SUDO} mkdir ${OUT_DIR}/${dir}
     ${SUDO} chown root:root ${OUT_DIR}/${dir}
 done
 
 [ -d ${OUT_DIR}/${MM} ] || ${SUDO} mkdir ${OUT_DIR}/${MM}
-[ -d ${OUT_DIR}/${MM}/pics ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/pics
-[ -f pics/modelslist.txt ] && ${SUDO} cp pics/modelslist.txt ${OUT_DIR}/${MM}/pics
+[ -d ${OUT_DIR}/${MM}/pics-portrait ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/pics-portrait
+[ -f pics-portrait/modelslist.txt ] && ${SUDO} cp pics-portrait/modelslist.txt ${OUT_DIR}/${MM}/pics-portrait
 
-${SUDO} cp AUTHORS ${OUT_DIR}/${TOP}/share/doc/${PKG}/AUTHORS
-${SUDO} cp LICENSE ${OUT_DIR}/${TOP}/share/doc/${PKG}/copyright
-${SUDO} cp CHANGELOG.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
-${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
-${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
+${SUDO} cp AUTHORS ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/AUTHORS
+${SUDO} cp LICENSE ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/copyright
+${SUDO} cp CHANGELOG.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
+${SUDO} cp README.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README
+${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
 
 cd dist
 echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"
@@ -252,7 +252,7 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: all
-Depends: mirrorcommand (>= 2.5)
+Depends: mirrorcommand (>= 3.0.0)
 Installled-Size: 4700000
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Build-Depends: debhelper (>= 11)
@@ -263,8 +263,8 @@ Description: MagicMirror Tantra Tutorial
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
-for dir in "${TOP}" "${DESTDIR}" "${MM}" "${TOP}/share" \
-           "${TOP}/share/doc" "${TOP}/share/doc/${PKG}"
+for dir in "${TOP}" "${DESTDIR}" "${MM}" "${DESTDIR}/share" \
+           "${DESTDIR}/share/doc" "${DESTDIR}/share/doc/${PKG}"
 do
     [ -d ${OUT_DIR}/${dir} ] || ${SUDO} mkdir ${OUT_DIR}/${dir}
     ${SUDO} chown root:root ${OUT_DIR}/${dir}
@@ -274,11 +274,11 @@ done
 [ -d ${OUT_DIR}/${MM}/movies ] || ${SUDO} mkdir ${OUT_DIR}/${MM}/movies
 [ -f movies/tantralist.txt ] && ${SUDO} cp movies/tantralist.txt ${OUT_DIR}/${MM}/movies
 
-${SUDO} cp AUTHORS ${OUT_DIR}/${TOP}/share/doc/${PKG}/AUTHORS
-${SUDO} cp LICENSE ${OUT_DIR}/${TOP}/share/doc/${PKG}/copyright
-${SUDO} cp CHANGELOG.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
-${SUDO} cp README.md ${OUT_DIR}/${TOP}/share/doc/${PKG}/README
-${SUDO} gzip -9 ${OUT_DIR}/${TOP}/share/doc/${PKG}/changelog
+${SUDO} cp AUTHORS ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/AUTHORS
+${SUDO} cp LICENSE ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/copyright
+${SUDO} cp CHANGELOG.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
+${SUDO} cp README.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README
+${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/changelog
 
 cd dist
 echo "Building ${PKG_NAME}_${PKG_VER}-${PKG_REL} package"

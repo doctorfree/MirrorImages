@@ -20,7 +20,7 @@ set -e
 case "$1" in
     remove|upgrade|deconfigure)
         MM="/usr/local/MirrorCommand"
-        [ -d ${MM}/pics ] && {
+        [ -d ${MM}/pics-portrait ] && {
           REMOVE=1
           while true
           do
@@ -39,18 +39,18 @@ case "$1" in
             esac
           done
           [ "${REMOVE}" ] && {
-            if [ -f ${MM}/pics/imlist.txt ]
+            if [ -f ${MM}/pics-portrait/imlist.txt ]
             then
               while read img
               do
-                rm -f ${MM}/pics/${img}
-              done < ${MM}/pics/imlist.txt
-              rm -f ${MM}/pics/imlist.txt
+                rm -f ${MM}/pics-portrait/${img}
+              done < ${MM}/pics-portrait/imlist.txt
+              rm -f ${MM}/pics-portrait/imlist.txt
               for subdir in Art Fractals Gif Owls Waterfalls
               do
-                for folder in ${MM}/pics/${subdir}/*
+                for folder in ${MM}/pics-portrait/${subdir}/*
                 do
-                  [ "${folder}" == "${MM}/pics/${subdir}/*" ] || {
+                  [ "${folder}" == "${MM}/pics-portrait/${subdir}/*" ] || {
                     [ -d ${folder} ] && {
                       if [ -L ${folder} ]
                       then
@@ -61,25 +61,25 @@ case "$1" in
                     }
                   }
                 done
-                [ -d ${MM}/pics/${subdir} ] && {
-                  if [ -L ${MM}/pics/${subdir} ]
+                [ -d ${MM}/pics-portrait/${subdir} ] && {
+                  if [ -L ${MM}/pics-portrait/${subdir} ]
                   then
-                    rm -f ${MM}/pics/${subdir}
+                    rm -f ${MM}/pics-portrait/${subdir}
                   else
-                    rmdir --ignore-fail-on-non-empty ${MM}/pics/${subdir}
+                    rmdir --ignore-fail-on-non-empty ${MM}/pics-portrait/${subdir}
                   fi
                 }
               done
             else
               for subdir in Art Fractals Gif Owls Waterfalls
               do
-                rm -rf ${MM}/pics/${subdir}
+                rm -rf ${MM}/pics-portrait/${subdir}
               done
             fi
-            # Remove any symbolic links in the pics directory
-            for folder in ${MM}/pics/*
+            # Remove any symbolic links in the pics-portrait directory
+            for folder in ${MM}/pics-portrait/*
             do
-              [ "${folder}" == "${MM}/pics/*" ] && continue
+              [ "${folder}" == "${MM}/pics-portrait/*" ] && continue
               [ -L "${folder}" ] && {
                   rm -f "${folder}"
               }

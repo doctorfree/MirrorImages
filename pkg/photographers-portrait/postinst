@@ -22,18 +22,19 @@ case "$1" in
     configure)
         export PATH=/usr/local/bin:$PATH
         MM="/usr/local/MirrorCommand"
-        [ -d ${MM}/pics ] || mkdir ${MM}/pics
-        cd ${MM}/pics
+        PICDIR="${PICDIR}/pics-portrait"
+        [ -d ${PICDIR} ] || mkdir ${PICDIR}
+        cd ${PICDIR}
         DOWNLOAD=
-        if [ -f ${MM}/pics/photogslist.txt ]
+        if [ -f ${PICDIR}/photogslist.txt ]
         then
           while read img
           do
-            [ -f ${MM}/pics/${img} ] || {
+            [ -f ${PICDIR}/${img} ] || {
                 DOWNLOAD=1
                 break
             }
-          done < ${MM}/pics/photogslist.txt
+          done < ${PICDIR}/photogslist.txt
         else
           DOWNLOAD=1
         fi
