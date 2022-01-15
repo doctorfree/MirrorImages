@@ -1,4 +1,4 @@
-# MirrorImagesPortrait
+# MirrorImages
 
 ## Table of contents
 
@@ -19,9 +19,10 @@ functionality of the MagicMirror. In order to enable preconfigured image display
 of the MirrorCommand config files, install these packages on a MagicMirror
 which has the MirrorCommand package installed.
 
-The images in these packages have been tailored for a MagicMirror in portrait mode.
-For landscape mode images, see the
-[MirrorImagesLandscape](https://gitlab.com/doctorfree/MirrorImagesLandscape) project.
+The images in these packages have been tailored for use by a MagicMirror
+with the MirrorCommand package installed. MirrorImages packages are provided
+in both portrait and landscape mode. Select the MirrorImages package(s)
+suitable for the orientation of your MagicMirror.
 
 ## Installation
 
@@ -39,14 +40,14 @@ Install the base MirrorCommand package by executing the command
 sudo apt install MirrorCommand<version>.deb
 ```
 
-To install the MirrorImagePortrait packages:
+To install the MirrorImage packages:
 
-[Download the latest Debian package format releases](https://gitlab.com/doctorfree/MirrorImagesPortrait/-/releases)
+[Download the latest Debian package format releases](https://gitlab.com/doctorfree/MirrorImages/-/releases)
 
-Install the MirrorImagesPortrait packages by executing the commands:
+Install the MirrorImages packages by executing the commands:
 
 ```bash
-sudo apt install MirrorImagesPortrait_<version>.deb
+sudo apt install ImagesPortrait_<version>.deb
 sudo apt install ArtistsPortrait_<version>.deb
 sudo apt install ModelsPortrait_<version>.deb
 sudo apt install PhotographersPortrait_<version>.deb
@@ -58,7 +59,7 @@ install from source.
 
 To do so, clone the repository:
 
-<code>git clone `https://gitlab.com/doctorfree/MirrorImagesPortrait.git`</code>
+<code>git clone `https://gitlab.com/doctorfree/MirrorImages.git`</code>
 
 Use the [./mkpkg](mkpkg) script to create Debian format packages on a system with
 the prerequisite packaging development environment. Once packages have been
@@ -67,7 +68,7 @@ created in the source repository they can be installed by executing the
 
 **Note:** The Artists, Models, TantraTutorial, and Photographers image archives
 include images of artistic nudity. If you wish to avoid the display of artistic
-nudes, only install the MirrorImagesPortrait package.
+nudes, only install the ImagesPortrait or ImagesLandscape package.
 
 #### Package Sizes
 
@@ -83,7 +84,7 @@ following disk space requirements:
 - ModelsPortrait        4.7G
 - PhotographersPortrait 500M
 - TantraTutorial        387M
-- MirrorImagesPortrait  375M
+- ImagesPortrait        375M
 
 Prior to downloading and extracting the image archives the installation script
 will provide a prompt allowing the installer to skip larger downloads if desired.
@@ -95,14 +96,14 @@ on a larger external drive if necessary.
 
 #### Removal
 
-To remove/uninstall the MirrorImagesPortrait packages execute the commands:
+To remove/uninstall the MirrorImages packages execute the commands:
 
 ```bash
 sudo apt remove artists-portrait
 sudo apt remove models-portrait
 sudo apt remove photographers-portrait
 sudo apt remove tantra-tutorial
-sudo apt remove mirror-images-portrait
+sudo apt remove images-portrait
 ```
 
 **Note:** Removal may issue a warning about removing `/usr/local` and other

@@ -11,10 +11,10 @@
 # sudo dpkg -i "${DEB}"
 # sudo apt-get install -f
 
-SRC_NAME="MirrorImagesPortrait"
-PKG_NAMES="MirrorImagesPortrait ArtistsPortrait ModelsPortrait \
+SRC_NAME="MirrorImages"
+PKG_NAMES="ImagesPortrait ArtistsPortrait ModelsPortrait \
            PhotographersPortrait TantraTutorial"
-APT_NAMES="mirror-images-portrait artists-portrait models-portrait \
+APT_NAMES="images-portrait artists-portrait models-portrait \
            photographers-portrait tantra-tutorial"
 SRC="${HOME}/src"
 
@@ -51,8 +51,8 @@ get_installed_packages() {
   do
     dpkg -s ${pkg} | grep Status: | grep 'ok installed' > /dev/null && {
       case "${pkg}" in
-        "mirror-images-portrait")
-            PKG_INSTALLED="${PKG_INSTALLED} MirrorImagesPortrait"
+        "images-portrait")
+            PKG_INSTALLED="${PKG_INSTALLED} ImagesPortrait"
             ;;
         "artists-portrait")
             PKG_INSTALLED="${PKG_INSTALLED} ArtistsPortrait"
@@ -120,7 +120,7 @@ install_selected() {
     check_package_names
     get_installed_packages
     [ "${PKG_INSTALLED}" ] && {
-      echo "Currently installed MirrorImagesPortrait packages:"
+      echo "Currently installed MirrorImages packages:"
       echo ""
       for instpkg in ${PKG_INSTALLED}
       do
@@ -129,7 +129,7 @@ install_selected() {
       echo ""
     }
     [ "${PKG_AVAILABLE}" ] && {
-      echo "Currently available MirrorImagesPortrait packages:"
+      echo "Currently available MirrorImages packages:"
       echo ""
       for avaipkg in ${PKG_AVAILABLE}
       do
