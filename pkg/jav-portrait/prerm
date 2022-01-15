@@ -1,0 +1,85 @@
+#!/bin/bash
+# prerm script for jav-portrait
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <prerm> `remove'
+#        * <old-prerm> `upgrade' <new-version>
+#        * <new-prerm> `failed-upgrade' <old-version>
+#        * <conflictor's-prerm> `remove' `in-favour' <package> <new-version>
+#        * <deconfigured's-prerm> `deconfigure' `in-favour'
+#          <package-being-installed> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see https://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        MM="/usr/local/MirrorCommand"
+        [ -d ${MM}/pics-portrait ] && {
+          REMOVE=1
+          while true
+          do
+            read -p "Remove previously downloaded JAV images? ('Y'/'N'): " yn
+            case $yn in
+                [Yy]*)
+                    break
+                    ;;
+                [Nn]*)
+                    REMOVE=
+                    break
+                    ;;
+                * )
+                    echo "Please answer yes or no."
+                    ;;
+            esac
+          done
+          [ "${REMOVE}" ] && {
+            if [ -f ${MM}/pics-portrait/javlist.txt ]
+            then
+              while read img
+              do
+                rm -f ${MM}/pics-portrait/${img}
+              done < ${MM}/pics-portrait/javlist.txt
+              rm -f ${MM}/pics-portrait/javlist.txt
+              for subdir in ${MM}/pics-portrait/JAV/*
+              do
+                [ "${subdir}" == "${MM}/pics-portrait/JAV/*" ] && continue
+                [ -d ${subdir} ] && {
+                  if [ -L ${subdir} ]
+                  then
+                    rm -f ${subdir}
+                  else
+                    rmdir --ignore-fail-on-non-empty ${subdir}
+                  fi
+                }
+              done
+              [ -d ${MM}/pics-portrait/JAV ] && {
+                if [ -L ${MM}/pics-portrait/JAV ]
+                then
+                  rm -f ${MM}/pics-portrait/JAV
+                else
+                  rmdir --ignore-fail-on-non-empty ${MM}/pics-portrait/JAV
+                fi
+              }
+            else
+              rm -rf ${MM}/pics-portrait/JAV
+            fi
+          }
+        }
+    ;;
+
+    failed-upgrade)
+    ;;
+
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

@@ -13,9 +13,13 @@
 
 SRC_NAME="MirrorImages"
 PKG_NAMES="ImagesPortrait ArtistsPortrait ModelsPortrait \
-           PhotographersPortrait TantraTutorial"
+           PhotographersPortrait TantraTutorial JavPortrait \
+           ImagesLandscape ArtistsLandscape ModelsLandscape \
+           PhotographersLandscape JavLandscape"
 APT_NAMES="images-portrait artists-portrait models-portrait \
-           photographers-portrait tantra-tutorial"
+           photographers-portrait tantra-tutorial jav-portrait \
+           images-landscape artists-landscape models-landscape \
+           photographers-landscape jav-landscape"
 SRC="${HOME}/src"
 
 PKG_INSTALLED=
@@ -51,6 +55,24 @@ get_installed_packages() {
   do
     dpkg -s ${pkg} | grep Status: | grep 'ok installed' > /dev/null && {
       case "${pkg}" in
+        "images-landscape")
+            PKG_INSTALLED="${PKG_INSTALLED} ImagesLandscape"
+            ;;
+        "artists-landscape")
+            PKG_INSTALLED="${PKG_INSTALLED} ArtistsLandscape"
+            ;;
+        "models-landscape")
+            PKG_INSTALLED="${PKG_INSTALLED} ModelsLandscape"
+            ;;
+        "photographers-landscape")
+            PKG_INSTALLED="${PKG_INSTALLED} PhotographersLandscape"
+            ;;
+        "jav-landscape")
+            PKG_INSTALLED="${PKG_INSTALLED} JavLandscape"
+            ;;
+        "jav-portrait")
+            PKG_INSTALLED="${PKG_INSTALLED} JavPortrait"
+            ;;
         "images-portrait")
             PKG_INSTALLED="${PKG_INSTALLED} ImagesPortrait"
             ;;

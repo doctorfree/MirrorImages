@@ -49,8 +49,20 @@ Install the MirrorImages packages by executing the commands:
 ```bash
 sudo apt install ImagesPortrait_<version>-<release>.deb
 sudo apt install ArtistsPortrait_<version>-<release>.deb
+sudo apt install JavPortrait_<version>-<release>.deb
 sudo apt install ModelsPortrait_<version>-<release>.deb
 sudo apt install PhotographersPortrait_<version>-<release>.deb
+sudo apt install TantraTutorial_<version>-<release>.deb
+```
+
+or
+
+```bash
+sudo apt install ImagesLandscape_<version>-<release>.deb
+sudo apt install ArtistsLandscape_<version>-<release>.deb
+sudo apt install JavLandscape_<version>-<release>.deb
+sudo apt install ModelsLandscape_<version>-<release>.deb
+sudo apt install PhotographersLandscape_<version>-<release>.deb
 sudo apt install TantraTutorial_<version>-<release>.deb
 ```
 
@@ -80,17 +92,24 @@ In order to minimize disk space requirements, all packages pipe their downloads
 to stdout and extract the compressed archives via that pipe. This results in the
 following disk space requirements:
 
-- ArtistsPortrait       5.4G
-- ModelsPortrait        4.7G
-- PhotographersPortrait 500M
-- TantraTutorial        387M
-- ImagesPortrait        375M
+- ArtistsLandscape       5.4G
+- JavLandscape           5.0G
+- ModelsLandscape        4.7G
+- PhotographersLandscape 500M
+- ImagesLandscape        375M
+- ArtistsPortrait        5.4G
+- JavPortrait            5.0G
+- ModelsPortrait         4.7G
+- PhotographersPortrait  500M
+- TantraTutorial         387M
+- ImagesPortrait         375M
 
 Prior to downloading and extracting the image archives the installation script
 will provide a prompt allowing the installer to skip larger downloads if desired.
 
-All image archives are extracted into `/usr/local/MirrorCommand/pics/`
-and `/usr/local/MirrorCommand/movies/`
+All image archives are extracted into `/usr/local/MirrorCommand/pics-landscape/`,
+`/usr/local/MirrorCommand/pics-portrait/`, and `/usr/local/MirrorCommand/movies/`
+
 It is possible to configure your system so that those directories reside
 on a larger external drive if necessary.
 
@@ -100,10 +119,22 @@ To remove/uninstall the MirrorImages packages execute the commands:
 
 ```bash
 sudo apt remove artists-portrait
+sudo apt remove jav-portrait
 sudo apt remove models-portrait
 sudo apt remove photographers-portrait
 sudo apt remove tantra-tutorial
 sudo apt remove images-portrait
+```
+
+or
+
+```bash
+sudo apt remove artists-landscape
+sudo apt remove jav-landscape
+sudo apt remove models-landscape
+sudo apt remove photographers-landscape
+sudo apt remove tantra-tutorial
+sudo apt remove images-landscape
 ```
 
 **Note:** Removal may issue a warning about removing `/usr/local` and other

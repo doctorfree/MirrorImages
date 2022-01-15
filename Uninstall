@@ -1,10 +1,15 @@
 #!/bin/bash
 
 for pkg in artists-portrait \
+           jav-portrait \
            models-portrait \
            photographers-portrait \
            tantra-tutorial \
-           images-portrait
+           images-portrait \
+           jav-landscape \
+           models-landscape \
+           photographers-landscape \
+           artists-landscape \
 do
     dpkg -s ${pkg} > /dev/null 2>&1
     retVal=$?
