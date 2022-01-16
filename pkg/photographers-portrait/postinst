@@ -22,7 +22,7 @@ case "$1" in
     configure)
         export PATH=/usr/local/bin:$PATH
         MM="/usr/local/MirrorCommand"
-        PICDIR="${PICDIR}/pics-portrait"
+        PICDIR="${MM}/pics-portrait"
         [ -d ${PICDIR} ] || mkdir ${PICDIR}
         cd ${PICDIR}
         DOWNLOAD=
