@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+Sun Jan 16 11:05:05 2022 -0800 ab6539b :
+   Fix typos in postinst
+Sun Jan 16 07:24:09 2022 -0800 cb5c656 :
+   Convenience script to get the IDs from the output of getfolderids
+Sat Jan 15 11:24:28 2022 -0800 59240ad :
+   Added JAV image packages
+Sat Jan 15 08:26:02 2022 -0800 790da96 :
+   Add creation of landscape packages
+Sat Jan 15 07:44:58 2022 -0800 ca997d0 :
+   Reflect package name change in packaging scripts
+Sat Jan 15 07:41:47 2022 -0800 62c0a58 :
+   Rename repo MirrorImages and base image package ImagesPortrait
+Sat Jan 15 07:20:46 2022 -0800 206420d :
+   Move portrait format image packages install location to pics-portrait
+Tue Dec 28 10:02:37 2021 -0800 c271685 :
+   Rename MirrorCommandLine to MirrorCommand
+Sat Dec 18 13:59:14 2021 -0800 b6e1a01 :
+   Models package was not using release in Debian package file name
+Sat Dec 18 13:35:13 2021 -0800 eb8a8a0 :
+   Fix TantraTutorial package selection
+Sun Dec 5 19:01:23 2021 -0800 44f78ad :
+   Add browse-artifacts.txt
+Mon Nov 29 13:47:25 2021 -0800 e382c10 :
+   Added notes on Tantra Tutorial
+Mon Nov 29 09:59:17 2021 -0800 48f13e3 :
+   Update changelog in preparation for 2.6 release
 Mon Nov 29 08:57:29 2021 -0800 0b5439e :
    Fix version in dist dir
 Mon Nov 29 08:49:49 2021 -0800 04ddbac :
