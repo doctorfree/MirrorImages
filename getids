@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# script to get the Google Drive IDs from the output of getfolderids
+# 
+
+[ "$1" ] || {
+    echo "Usage: getids <filename>"
+    echo "Missing filename"
+    exit 1
+}
+[ -f "$1" ] || {
+    echo "Usage: getids <filename>"
+    echo "Filename $1 not found"
+    exit 1
+}
+
+b=`basename $1`
+[ -d ids ] || mkdir ids
+cat $1 | awk ' { print "     " $3  " \\" } ' | sort > ids/$b
