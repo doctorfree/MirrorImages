@@ -44,7 +44,7 @@ release:
       artifacts: true
   release:
     name: 'MirrorImages Version $VERSION release $RELEASE'
-    description: 'Created using the release-cli'
+    description: './release.md'
     tag_name: 'v${VERSION}r${RELEASE}'
     assets:
       links:
