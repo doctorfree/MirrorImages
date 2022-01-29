@@ -38,8 +38,21 @@ case "$1" in
           DOWNLOAD=1
         fi
         [ "${DOWNLOAD}" ] && {
-          inst=`type -p pip`
-          [ "${inst}" ] || sudo apt-get install python-pip
+          type -p pip > /dev/null || {
+            if type -p apt-get > /dev/null
+            then
+              apt-get -q -y install python-pip
+            else
+              if type -p apt > /dev/null
+              then
+                apt -q -y install python-pip
+              else
+                echo "Unable to locate apt-get or apt"
+                echo "Verify that apt-get or apt is installed"
+                echo "then retry installation of this package."
+              fi
+            fi
+          }
           pip list | grep -F gdown > /dev/null || {
             pip install gdown
           }

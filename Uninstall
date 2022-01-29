@@ -1,21 +1,54 @@
 #!/bin/bash
 
-for pkg in artists-portrait \
-           jav-portrait \
-           models-portrait \
-           photographers-portrait \
-           tantra-tutorial \
-           images-portrait \
-           images-landscape \
-           jav-landscape \
-           models-landscape \
-           photographers-landscape \
-           artists-landscape \
-do
-    dpkg -s ${pkg} > /dev/null 2>&1
-    retVal=$?
-    [ ${retVal} -eq 0 ] && {
-        echo "Removing ${pkg}"
-        sudo apt remove ${pkg} -y
-    }
-done
+debian=
+have_apt=`type -p apt`
+have_dpkg=`type -p dpkg`
+have_rpm=`type -p rpm`
+have_yum=`type -p yum`
+[ -f /etc/os-release ] && . /etc/os-release
+[ "${ID_LIKE}" == "debian" ] && debian=1
+[ "${debian}" ] || [ -f /etc/debian_version ] && debian=1
+
+if [ "${debian}" ]
+then
+    for pkg in artists-portrait \
+               jav-portrait \
+               models-portrait \
+               photographers-portrait \
+               tantra-tutorial \
+               images-portrait \
+               images-landscape \
+               jav-landscape \
+               models-landscape \
+               photographers-landscape \
+               artists-landscape \
+    do
+        dpkg -s ${pkg} > /dev/null 2>&1
+        retVal=$?
+        [ ${retVal} -eq 0 ] && {
+            echo "Removing ${pkg}"
+            sudo apt remove ${pkg} -y
+        }
+    done
+else
+    for pkg in ArtistsPortrait \
+               JavPortrait \
+               ModelsPortrait \
+               PhotographersPortrait \
+               TantraTutorial \
+               ImagesPortrait \
+               ImagesLandscape \
+               JavLandscape \
+               ModelsLandscape \
+               PhotographersLandscape \
+               ArtistsLandscape \
+    do
+        rpm -q ${pkg} > /dev/null 2>&1
+        retVal=$?
+        [ ${retVal} -eq 0 ] && {
+            echo "Removing ${pkg}"
+            sudo yum remove ${pkg} -y
+        }
+    done
+fi
+

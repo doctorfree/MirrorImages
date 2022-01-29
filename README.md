@@ -4,8 +4,12 @@
 
 1. [Overview](#overview)
 1. [Installation](#installation)
-	1. [Package Sizes](#package-sizes)
-	1. [Removal](#removal)
+    1. [Debian based Linux system install](#debian-based-linux-system-install)
+    1. [RPM based Linux system install](#rpm-based-linux-system-install)
+    1. [Custom package install](#custom-package-install)
+    1. [Package Sizes](#package-sizes)
+    1. [Debian based Linux systems removal](#debian-based-linux-systems-removal)
+    1. [RPM based Linux systems removal](#rpm-based-linux-systems-removal)
 1. [License](#license)
 
 ## Overview
@@ -37,34 +41,68 @@ To install MirrorCommand:
 Install the base MirrorCommand package by executing the command
 
 ```bash
-sudo apt install MirrorCommand_<version>-<release>.deb
-```
-
-To install the MirrorImage packages:
-
-[Download the latest Debian package format releases](https://gitlab.com/doctorfree/MirrorImages/-/releases)
-
-Install the MirrorImages packages by executing the commands:
-
-```bash
-sudo apt install ImagesPortrait_<version>-<release>.deb
-sudo apt install ArtistsPortrait_<version>-<release>.deb
-sudo apt install JavPortrait_<version>-<release>.deb
-sudo apt install ModelsPortrait_<version>-<release>.deb
-sudo apt install PhotographersPortrait_<version>-<release>.deb
-sudo apt install TantraTutorial_<version>-<release>.deb
+sudo apt install ./MirrorCommand_<version>-<release>.deb
 ```
 
 or
 
 ```bash
-sudo apt install ImagesLandscape_<version>-<release>.deb
-sudo apt install ArtistsLandscape_<version>-<release>.deb
-sudo apt install JavLandscape_<version>-<release>.deb
-sudo apt install ModelsLandscape_<version>-<release>.deb
-sudo apt install PhotographersLandscape_<version>-<release>.deb
-sudo apt install TantraTutorial_<version>-<release>.deb
+sudo yum localinstall ./MirrorCommand_<version>-<release>.rpm
 ```
+
+To install the MirrorImage packages:
+
+[Download the latest Debian or RPM package format releases](https://gitlab.com/doctorfree/MirrorImages/-/releases)
+
+### Debian based Linux system install
+
+Install the MirrorImages Debian format packages by executing the commands:
+
+```bash
+sudo apt install ./ImagesPortrait_<version>-<release>.deb
+sudo apt install ./ArtistsPortrait_<version>-<release>.deb
+sudo apt install ./JavPortrait_<version>-<release>.deb
+sudo apt install ./ModelsPortrait_<version>-<release>.deb
+sudo apt install ./PhotographersPortrait_<version>-<release>.deb
+sudo apt install ./TantraTutorial_<version>-<release>.deb
+```
+
+or
+
+```bash
+sudo apt install ./ImagesLandscape_<version>-<release>.deb
+sudo apt install ./ArtistsLandscape_<version>-<release>.deb
+sudo apt install ./JavLandscape_<version>-<release>.deb
+sudo apt install ./ModelsLandscape_<version>-<release>.deb
+sudo apt install ./PhotographersLandscape_<version>-<release>.deb
+sudo apt install ./TantraTutorial_<version>-<release>.deb
+```
+
+### RPM based Linux system install
+
+Install the MirrorImages RPM format packages by executing the commands:
+
+```bash
+sudo yum localinstall ./ImagesPortrait_<version>-<release>.deb
+sudo yum localinstall ./ArtistsPortrait_<version>-<release>.deb
+sudo yum localinstall ./JavPortrait_<version>-<release>.deb
+sudo yum localinstall ./ModelsPortrait_<version>-<release>.deb
+sudo yum localinstall ./PhotographersPortrait_<version>-<release>.deb
+sudo yum localinstall ./TantraTutorial_<version>-<release>.deb
+```
+
+or
+
+```bash
+sudo yum localinstall ./ImagesLandscape_<version>-<release>.deb
+sudo yum localinstall ./ArtistsLandscape_<version>-<release>.deb
+sudo yum localinstall ./JavLandscape_<version>-<release>.deb
+sudo yum localinstall ./ModelsLandscape_<version>-<release>.deb
+sudo yum localinstall ./PhotographersLandscape_<version>-<release>.deb
+sudo yum localinstall ./TantraTutorial_<version>-<release>.deb
+```
+
+### Custom package install
 
 Alternately, you can clone this repository, create your own packages, and
 install from source.
@@ -82,7 +120,7 @@ created in the source repository they can be installed by executing the
 include images of artistic nudity. If you wish to avoid the display of artistic
 nudes, only install the ImagesPortrait or ImagesLandscape package.
 
-#### Package Sizes
+### Package Sizes
 
 No image files are included in these packages. Rather, each package downloads
 image archives and extracts them into the appropriate locations. Some of these
@@ -113,9 +151,10 @@ All image archives are extracted into `/usr/local/MirrorCommand/pics-landscape/`
 It is possible to configure your system so that those directories reside
 on a larger external drive if necessary.
 
-#### Removal
+### Debian based Linux systems removal
 
-To remove/uninstall the MirrorImages packages execute the commands:
+To remove/uninstall the MirrorImages packages on Debian based systems,
+execute the commands:
 
 ```bash
 sudo apt remove artists-portrait
@@ -142,6 +181,31 @@ folders within `/usr/local`. This is an artifact of the Debian packaging system.
 If you wish to silence that warning and prevent the Debian packaging system from
 trying to remove `/usr/local` then install the
 [core-custom-local Debian package](https://gitlab.com/doctorfree/core-custom-local/-/releases).
+
+### RPM based Linux systems removal
+
+To remove/uninstall the MirrorImages packages on RPM bases systems,
+execute the commands:
+
+```bash
+sudo yum remove ArtistsPortrait
+sudo yum remove JavPortrait
+sudo yum remove ModelsPortrait
+sudo yum remove PhotographersPortrait
+sudo yum remove TantraTutorial
+sudo yum remove ImagesPortrait
+```
+
+or
+
+```bash
+sudo yum remove ArtistsLandscape
+sudo yum remove JavLandscape
+sudo yum remove ModelsLandscape
+sudo yum remove PhotographersLandscape
+sudo yum remove TantraTutorial
+sudo yum remove ImagesLandscape
+```
 
 ## License
 
