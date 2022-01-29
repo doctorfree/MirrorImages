@@ -575,10 +575,8 @@ for pkg in ArtistsLandscape ArtistsPortrait ImagesLandscape ImagesPortrait \
            JavLandscape JavPortrait ModelsLandscape ModelsPortrait \
            PhotographersLandscape PhotographersPortrait TantraTutorial
 do
-  echo "Building ${pkg} RPM"
   rm -f ${OUT_DIR}/rpm/MirrorImages.spec
   [ -f pkg/rpm/${pkg}/MirrorImages.spec ] && {
-    echo "Copying in ${pkg} RPM spec file"
     cp pkg/rpm/${pkg}/MirrorImages.spec ${OUT_DIR}/rpm/MirrorImages.spec
     rpmbuild -ba --build-in-place \
       --define "_topdir ${OUT_DIR}" \

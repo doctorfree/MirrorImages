@@ -4,7 +4,7 @@ Release:    %{_release}
 Summary:    MirrorImages landscape mode images
 License:    MIT
 BuildArch:  noarch
-Requires:   MirrorCommand
+Requires:   MirrorCommand >= 3.0.2
 URL:        https://gitlab.com/doctorfree/MirrorImages
 Vendor:     Doctorwhen's Bodacious Laboratory
 Packager:   ronaldrecord@gmail.com
@@ -66,7 +66,7 @@ fi
   if [ -x ${MM}/bin/getimages ]
   then
     echo "Downloading landscape mode image archive ..."
-    ${MM}/bin/getimages -l
+    ${MM}/bin/getimages -l -i
   else
     echo "Unable to locate ${MM}/bin/getimages"
     echo "Verify that MirrorCommand is installed and"

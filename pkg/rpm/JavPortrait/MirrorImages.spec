@@ -4,7 +4,7 @@ Release:    %{_release}
 Summary:    MirrorImages JAV portrait mode images
 License:    MIT
 BuildArch:  noarch
-Requires:   MirrorCommand
+Requires:   MirrorCommand >= 3.0.2
 URL:        https://gitlab.com/doctorfree/MirrorImages
 Vendor:     Doctorwhen's Bodacious Laboratory
 Packager:   ronaldrecord@gmail.com
@@ -65,7 +65,7 @@ fi
   if [ -x ${MM}/bin/getjav ]
   then
     echo "Downloading portrait mode JAV image archive ..."
-    ${MM}/bin/getjav
+    ${MM}/bin/getjav -i
   else
     echo "Unable to locate ${MM}/bin/getjav"
     echo "Verify that MirrorCommand is installed and"

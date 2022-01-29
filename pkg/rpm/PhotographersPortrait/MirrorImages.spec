@@ -4,7 +4,7 @@ Release:    %{_release}
 Summary:    MirrorImages Photographers portrait mode images
 License:    MIT
 BuildArch:  noarch
-Requires:   MirrorCommand
+Requires:   MirrorCommand >= 3.0.2
 URL:        https://gitlab.com/doctorfree/MirrorImages
 Vendor:     Doctorwhen's Bodacious Laboratory
 Packager:   ronaldrecord@gmail.com
@@ -65,7 +65,7 @@ fi
   if [ -x ${MM}/bin/getphotogs ]
   then
     echo "Downloading portrait mode Photographers image archive ..."
-    ${MM}/bin/getphotogs
+    ${MM}/bin/getphotogs -i
   else
     echo "Unable to locate ${MM}/bin/getphotogs"
     echo "Verify that MirrorCommand is installed and"

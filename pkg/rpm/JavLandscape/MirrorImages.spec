@@ -4,7 +4,7 @@ Release:    %{_release}
 Summary:    MirrorImages JAV landscape mode images
 License:    MIT
 BuildArch:  noarch
-Requires:   MirrorCommand
+Requires:   MirrorCommand >= 3.0.2
 URL:        https://gitlab.com/doctorfree/MirrorImages
 Vendor:     Doctorwhen's Bodacious Laboratory
 Packager:   ronaldrecord@gmail.com
@@ -65,7 +65,7 @@ fi
   if [ -x ${MM}/bin/getjav ]
   then
     echo "Downloading landscape mode JAV image archive ..."
-    ${MM}/bin/getjav -l
+    ${MM}/bin/getjav -l -i
   else
     echo "Unable to locate ${MM}/bin/getjav"
     echo "Verify that MirrorCommand is installed and"

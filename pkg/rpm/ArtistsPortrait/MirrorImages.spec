@@ -4,7 +4,7 @@ Release:    %{_release}
 Summary:    MirrorImages Artists portrait mode images
 License:    MIT
 BuildArch:  noarch
-Requires:   MirrorCommand
+Requires:   MirrorCommand >= 3.0.2
 URL:        https://gitlab.com/doctorfree/MirrorImages
 Vendor:     Doctorwhen's Bodacious Laboratory
 Packager:   ronaldrecord@gmail.com
@@ -65,7 +65,7 @@ fi
   if [ -x ${MM}/bin/getartists ]
   then
     echo "Downloading portrait mode Artists image archive ..."
-    ${MM}/bin/getartists
+    ${MM}/bin/getartists -i
   else
     echo "Unable to locate ${MM}/bin/getartists"
     echo "Verify that MirrorCommand is installed and"
