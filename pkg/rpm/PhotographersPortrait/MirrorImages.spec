@@ -28,6 +28,8 @@ export PATH=/usr/local/bin:$PATH
 
 MM="/usr/local/MirrorCommand"
 PICDIR="${MM}/pics-portrait"
+USER=$(stat -c '%U' ${MM}/config)
+GROUP=$(stat -c '%G' ${MM}/config)
 [ -d ${PICDIR} ] || mkdir ${PICDIR}
 cd ${PICDIR}
 DOWNLOAD=
@@ -73,6 +75,7 @@ fi
     echo "retry installation of this package."
   fi
 }
+chown -R ${USER}:${GROUP} ${MM}
 echo "MirrorImages installation Complete"
 
 %preun
@@ -116,5 +119,10 @@ echo "MirrorImages pre-installation configuration complete"
 
 %files
 /usr
+%exclude %dir /usr/local/MirrorCommand
+%exclude %dir /usr/local/share/doc
+%exclude %dir /usr/local/share
+%exclude %dir /usr/local
+%exclude %dir /usr
 
 %changelog
