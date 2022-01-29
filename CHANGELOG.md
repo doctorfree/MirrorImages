@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+Jan 29, 2022 Version 3.0.0 Release 2
+This release of MirrorImages introduces RPM format installation packages.
+
+Jan 16, 2022 Version 3.0.0 Release 1
+MirrorImages 3.0.0 release 1 introduced support for both landscape and portrait mode images. Changes to packaging include the implementation of release creation during the Gitlab continuous integration process.
+
+Sat Jan 29 13:06:55 2022 -0800 74510c4 :
+   Set ownership in post install, exclude system dirs
+Sat Jan 29 10:03:09 2022 -0800 2bc9e68 :
+   Use -i option to get scripts to avoid user interaction, depends on MirrorCommand 3.0.2 or later
+Fri Jan 28 16:18:43 2022 -0800 7ab2481 :
+   Add support for RPM format package installs
+Fri Jan 28 11:31:01 2022 -0800 02f4612 :
+   Order release assets Packages
+Fri Jan 28 11:18:14 2022 -0800 14db877 :
+   Add filename and mode to artifact names
+Fri Jan 28 10:56:38 2022 -0800 d470ebc :
+   Add G or R rating to artifact names
+Fri Jan 28 10:47:44 2022 -0800 4a9bfb0 :
+   Use release.md for release description
+Thu Jan 20 13:41:29 2022 -0800 3c937de :
+   Add landscape images to Uninstall
+Sun Jan 16 11:37:13 2022 -0800 6f7e2a5 :
+   Automate release creation in Gitlab CI
 Sun Jan 16 11:05:05 2022 -0800 ab6539b :
    Fix typos in postinst
 Sun Jan 16 07:24:09 2022 -0800 cb5c656 :
