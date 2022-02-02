@@ -1,0 +1,85 @@
+#!/bin/bash
+# postinst script for countries-portrait
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see https://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    configure)
+        export PATH=/usr/local/bin:$PATH
+        MM="/usr/local/MirrorCommand"
+        PICDIR="${MM}/pics-portrait"
+        USER=$(stat -c '%U' ${MM}/config)
+        GROUP=$(stat -c '%G' ${MM}/config)
+        [ -d ${PICDIR} ] || mkdir ${PICDIR}
+        cd ${PICDIR}
+        DOWNLOAD=
+        if [ -f ${PICDIR}/countrieslist.txt ]
+        then
+          while read img
+          do
+            [ -f ${PICDIR}/${img} ] || {
+                DOWNLOAD=1
+                break
+            }
+          done < ${PICDIR}/countrieslist.txt
+        else
+          DOWNLOAD=1
+        fi
+        [ "${DOWNLOAD}" ] && {
+          type -p pip > /dev/null || {
+            if type -p apt-get > /dev/null
+            then
+              apt-get -q -y install python-pip
+            else
+              if type -p apt > /dev/null
+              then
+                apt -q -y install python-pip
+              else
+                echo "Unable to locate apt-get or apt"
+                echo "Verify that apt-get or apt is installed"
+                echo "then retry installation of this package."
+              fi
+            fi
+          }
+          pip list | grep -F gdown > /dev/null || {
+            pip install gdown
+          }
+          if [ -x ${MM}/bin/getcountries ]
+          then
+            echo "Downloading portrait mode Countries model image archive ..."
+            ${MM}/bin/getcountries -l
+          else
+            echo "Unable to locate ${MM}/bin/getcountries"
+            echo "Verify that MirrorCommand is installed and"
+            echo "${MM}/bin/getcountries is executable, then"
+            echo "retry installation of this package."
+          fi
+        }
+        chown -R ${USER}:${GROUP} ${MM}
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

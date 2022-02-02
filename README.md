@@ -61,6 +61,7 @@ Install the MirrorImages Debian format packages by executing the commands:
 ```bash
 sudo apt install ./ImagesPortrait_<version>-<release>.deb
 sudo apt install ./ArtistsPortrait_<version>-<release>.deb
+sudo apt install ./CountriesPortrait_<version>-<release>.deb
 sudo apt install ./JavPortrait_<version>-<release>.deb
 sudo apt install ./ModelsPortrait_<version>-<release>.deb
 sudo apt install ./PhotographersPortrait_<version>-<release>.deb
@@ -72,6 +73,7 @@ or
 ```bash
 sudo apt install ./ImagesLandscape_<version>-<release>.deb
 sudo apt install ./ArtistsLandscape_<version>-<release>.deb
+sudo apt install ./CountriesLandscape_<version>-<release>.deb
 sudo apt install ./JavLandscape_<version>-<release>.deb
 sudo apt install ./ModelsLandscape_<version>-<release>.deb
 sudo apt install ./PhotographersLandscape_<version>-<release>.deb
@@ -85,6 +87,7 @@ Install the MirrorImages RPM format packages by executing the commands:
 ```bash
 sudo yum localinstall ./ImagesPortrait_<version>-<release>.deb
 sudo yum localinstall ./ArtistsPortrait_<version>-<release>.deb
+sudo yum localinstall ./CountriesPortrait_<version>-<release>.deb
 sudo yum localinstall ./JavPortrait_<version>-<release>.deb
 sudo yum localinstall ./ModelsPortrait_<version>-<release>.deb
 sudo yum localinstall ./PhotographersPortrait_<version>-<release>.deb
@@ -96,6 +99,7 @@ or
 ```bash
 sudo yum localinstall ./ImagesLandscape_<version>-<release>.deb
 sudo yum localinstall ./ArtistsLandscape_<version>-<release>.deb
+sudo yum localinstall ./CountriesLandscape_<version>-<release>.deb
 sudo yum localinstall ./JavLandscape_<version>-<release>.deb
 sudo yum localinstall ./ModelsLandscape_<version>-<release>.deb
 sudo yum localinstall ./PhotographersLandscape_<version>-<release>.deb
@@ -116,9 +120,9 @@ the prerequisite packaging development environment. Once packages have been
 created in the source repository they can be installed by executing the
 [./Install](Install) command. Packages can be removed with [./Uninstall](Uninstall).
 
-**Note:** The Artists, Models, TantraTutorial, and Photographers image archives
-include images of artistic nudity. If you wish to avoid the display of artistic
-nudes, only install the ImagesPortrait or ImagesLandscape package.
+**Note:** The Artists, Countries, Models, TantraTutorial, and Photographers
+image archives include images of artistic nudity. If you wish to avoid the display
+of artistic nudes, only install the ImagesPortrait or ImagesLandscape package.
 
 ### Package Sizes
 
@@ -131,11 +135,13 @@ to stdout and extract the compressed archives via that pipe. This results in the
 following disk space requirements:
 
 - ArtistsLandscape       5.4G
+- CountriesLandscape       5.4G
 - JavLandscape           5.0G
 - ModelsLandscape        4.7G
 - PhotographersLandscape 500M
 - ImagesLandscape        375M
 - ArtistsPortrait        5.4G
+- CountriesPortrait        5.4G
 - JavPortrait            5.0G
 - ModelsPortrait         4.7G
 - PhotographersPortrait  500M
@@ -158,6 +164,7 @@ execute the commands:
 
 ```bash
 sudo apt remove artists-portrait
+sudo apt remove countries-portrait
 sudo apt remove jav-portrait
 sudo apt remove models-portrait
 sudo apt remove photographers-portrait
@@ -169,6 +176,7 @@ or
 
 ```bash
 sudo apt remove artists-landscape
+sudo apt remove countries-landscape
 sudo apt remove jav-landscape
 sudo apt remove models-landscape
 sudo apt remove photographers-landscape
@@ -189,6 +197,7 @@ execute the commands:
 
 ```bash
 sudo yum remove ArtistsPortrait
+sudo yum remove CountriesPortrait
 sudo yum remove JavPortrait
 sudo yum remove ModelsPortrait
 sudo yum remove PhotographersPortrait
@@ -200,6 +209,7 @@ or
 
 ```bash
 sudo yum remove ArtistsLandscape
+sudo yum remove CountriesLandscape
 sudo yum remove JavLandscape
 sudo yum remove ModelsLandscape
 sudo yum remove PhotographersLandscape
