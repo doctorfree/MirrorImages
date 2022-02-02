@@ -12,6 +12,7 @@ have_yum=`type -p yum`
 if [ "${debian}" ]
 then
     for pkg in artists-portrait \
+               countries-portrait \
                jav-portrait \
                models-portrait \
                photographers-portrait \
@@ -22,6 +23,7 @@ then
                models-landscape \
                photographers-landscape \
                artists-landscape \
+               countries-landscape
     do
         dpkg -s ${pkg} > /dev/null 2>&1
         retVal=$?
@@ -32,6 +34,7 @@ then
     done
 else
     for pkg in ArtistsPortrait \
+               CountriesPortrait \
                JavPortrait \
                ModelsPortrait \
                PhotographersPortrait \
@@ -42,6 +45,7 @@ else
                ModelsLandscape \
                PhotographersLandscape \
                ArtistsLandscape \
+               CountriesLandscape
     do
         rpm -q ${pkg} > /dev/null 2>&1
         retVal=$?

@@ -25,6 +25,8 @@ Where `<PackageName>` can be any of:
 
 - ArtistsLandscape
 - ArtistsPortrait
+- CountriesLandscape
+- CountriesPortrait
 - ImagesLandscape
 - ImagesPortrait
 - JavLandscape
@@ -47,6 +49,8 @@ Where `<package-name>` can be any of:
 - images-landscape
 - artists-portrait
 - artists-landscape
+- countries-portrait
+- countries-landscape
 - jav-portrait
 - jav-landscape
 - models-portrait
@@ -66,6 +70,8 @@ Where `<PackageName>` can be any of:
 
 - ArtistsLandscape
 - ArtistsPortrait
+- CountriesLandscape
+- CountriesPortrait
 - ImagesLandscape
 - ImagesPortrait
 - JavLandscape
@@ -84,4 +90,4 @@ sudo yum remove <package-name>
 
 ### Artistic Note
 
-**Note:** The Artists, Jav, Models, TantraTutorial, and Photographers image archives include images of artistic nudity. If you wish to avoid the display of artistic nudes, only install the ImagesPortrait or ImagesLandscape package.
+**Note:** The Artists, Countries, Jav, Models, TantraTutorial, and Photographers image archives include images of artistic nudity. If you wish to avoid the display of artistic nudes, only install the ImagesPortrait or ImagesLandscape package.

@@ -12,13 +12,15 @@
 # sudo apt-get install -f
 
 SRC_NAME="MirrorImages"
-PKG_NAMES="ImagesPortrait ArtistsPortrait ModelsPortrait \
-           PhotographersPortrait TantraTutorial JavPortrait \
-           ImagesLandscape ArtistsLandscape ModelsLandscape \
+PKG_NAMES="ImagesPortrait ArtistsPortrait CountriesPortrait \
+           ModelsPortrait PhotographersPortrait TantraTutorial \
+           JavPortrait ImagesLandscape ArtistsLandscape \
+           CountriesLandscape ModelsLandscape \
            PhotographersLandscape JavLandscape"
-APT_NAMES="images-portrait artists-portrait models-portrait \
-           photographers-portrait tantra-tutorial jav-portrait \
-           images-landscape artists-landscape models-landscape \
+APT_NAMES="images-portrait artists-portrait countries-portrait \
+           models-portrait photographers-portrait tantra-tutorial \
+           jav-portrait images-landscape artists-landscape \
+           countries-landscape models-landscape \
            photographers-landscape jav-landscape"
 SRC="${HOME}/src"
 
@@ -61,6 +63,9 @@ get_installed_packages() {
         "artists-landscape")
             PKG_INSTALLED="${PKG_INSTALLED} ArtistsLandscape"
             ;;
+        "countries-landscape")
+            PKG_INSTALLED="${PKG_INSTALLED} CountriesLandscape"
+            ;;
         "models-landscape")
             PKG_INSTALLED="${PKG_INSTALLED} ModelsLandscape"
             ;;
@@ -78,6 +83,9 @@ get_installed_packages() {
             ;;
         "artists-portrait")
             PKG_INSTALLED="${PKG_INSTALLED} ArtistsPortrait"
+            ;;
+        "countries-portrait")
+            PKG_INSTALLED="${PKG_INSTALLED} CountriesPortrait"
             ;;
         "models-portrait")
             PKG_INSTALLED="${PKG_INSTALLED} ModelsPortrait"
