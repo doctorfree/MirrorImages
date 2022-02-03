@@ -153,6 +153,7 @@ install_selected() {
   PKG_SELECTED=`echo $PKG_SELECTED | sed -e "s/^ //"`
 }
 
+YES=
 [ "$1" ] && {
   # If invoked with -i argument, present a menu of options to select from
   if [ "$1" == "-i" ]
@@ -203,7 +204,14 @@ install_selected() {
       done
     done
   else
-    PKG_NAMES="$*"
+    if [ "$1" == "-y" ]
+    then
+      YES="-y"
+      shift
+      [ "$1" ] && PKG_NAMES="$*"
+    else
+      PKG_NAMES="$*"
+    fi
   fi
   check_package_names
 }
@@ -234,25 +242,25 @@ do
   then
     if [ "${have_apt}" ]
     then
-      sudo apt install ${PKG}
+      sudo apt ${YES} install ${PKG}
     else
       if [ "${have_dpkg}" ]
       then
         sudo dpkg -i ${PKG}
       else
-        sudo apt install ${PKG}
+        sudo apt ${YES} install ${PKG}
       fi
     fi
   else
     if [ "${have_yum}" ]
     then
-      sudo yum install ${PKG}
+      sudo yum ${YES} install ${PKG}
     else
       if [ "${have_rpm}" ]
       then
         sudo rpm -i ${PKG}
       else
-        sudo dnf install ${PKG}
+        sudo dnf ${YES} install ${PKG}
       fi
     fi
   fi
