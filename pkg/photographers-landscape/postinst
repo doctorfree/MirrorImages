@@ -62,7 +62,7 @@ case "$1" in
           if [ -x ${MM}/bin/getphotogs ]
           then
             echo "Downloading landscape mode ${DN} image archive ..."
-            ${MM}/bin/getphotogs -l
+            ${MM}/bin/getphotogs -l -i
           else
             echo "Unable to locate ${MM}/bin/getphotogs"
             echo "Verify that MirrorCommand is installed and"

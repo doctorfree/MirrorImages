@@ -62,7 +62,7 @@ case "$1" in
           if [ -x ${MM}/bin/getcountries ]
           then
             echo "Downloading portrait mode Countries model image archive ..."
-            ${MM}/bin/getcountries -l
+            ${MM}/bin/getcountries -l -i
           else
             echo "Unable to locate ${MM}/bin/getcountries"
             echo "Verify that MirrorCommand is installed and"

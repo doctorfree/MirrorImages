@@ -61,7 +61,7 @@ case "$1" in
           if [ -x ${MM}/bin/gettantra ]
           then
             echo "Downloading tantra tutorial archive ..."
-            ${MM}/bin/gettantra
+            ${MM}/bin/gettantra -i
           else
             echo "Unable to locate ${MM}/bin/gettantra"
             echo "Verify that MirrorCommand is installed and"

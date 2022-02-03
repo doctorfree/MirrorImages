@@ -62,7 +62,7 @@ case "$1" in
           if [ -x ${MM}/bin/getjav ]
           then
             echo "Downloading landscape mode JAV image archive ..."
-            ${MM}/bin/getjav -l
+            ${MM}/bin/getjav -l -i
           else
             echo "Unable to locate ${MM}/bin/getjav"
             echo "Verify that MirrorCommand is installed and"
