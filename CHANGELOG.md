@@ -2,12 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+Feb 03, 2022 Version 3.0.1 Release 1
+This release update of MirrorImages incorporates changes to improve integration with the MirrorCommand package during downloads. In addition, support is added for models by country in the MirrorImages downloads and in the MirrorCommand default config files. New Google Drive file ids have been used in the download scripts to reflect the MirrorImages distribution changes.
+
 Jan 29, 2022 Version 3.0.0 Release 2
 This release of MirrorImages introduces RPM format installation packages.
 
 Jan 16, 2022 Version 3.0.0 Release 1
 MirrorImages 3.0.0 release 1 introduced support for both landscape and portrait mode images. Changes to packaging include the implementation of release creation during the Gitlab continuous integration process.
 
+Thu Feb 3 08:34:11 2022 -0800 4469f32 :
+   Do not prompt for download in Debian installs as well
+Thu Feb 3 08:29:18 2022 -0800 6e5fc80 :
+   Add -y argument to Install script
+Wed Feb 2 12:56:08 2022 -0800 14a4f43 :
+   Add countries packages to Install/Uninstall scripts and release notes
+Wed Feb 2 12:37:47 2022 -0800 9a9e86b :
+   Add packages for models by country
+Sat Jan 29 15:06:30 2022 -0800 af2f040 :
+   Update changelog in preparation for v3.0.0r2 release
 Sat Jan 29 13:06:55 2022 -0800 74510c4 :
    Set ownership in post install, exclude system dirs
 Sat Jan 29 10:03:09 2022 -0800 2bc9e68 :

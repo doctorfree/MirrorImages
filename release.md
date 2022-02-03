@@ -1,10 +1,10 @@
 ## Release Notes
 
-This release of MirrorImages introduces RPM format installation packages.
+This release update of MirrorImages incorporates changes to improve integration with the MirrorCommand package during downloads. In addition, support is added for models by country in the MirrorImages downloads and in the MirrorCommand default config files. New Google Drive file ids have been used in the download scripts to reflect the MirrorImages distribution changes. This release of MirrorImages introduces RPM format installation packages.
 
-MirrorImages 3.0.0 release 1 introduced support for both landscape and portrait mode images. Changes to packaging include the implementation of release creation during the Gitlab continuous integration process.
+MirrorImages 3.0.x introduced support for both landscape and portrait mode images. Changes to packaging include the implementation of release creation during the Gitlab continuous integration process.
 
-The MirrorImages project provides several Debian format installation packages that download image archives for use in conjunction with the [MirrorCommand project](https://gitlab.com/doctorfree/MirrorCommand). These packages all depend upon the prior installation of [MirrorCommand version 3.0.1](https://gitlab.com/doctorfree/MirrorCommand/-/releases) or later.
+The MirrorImages project provides several Debian format installation packages that download image archives for use in conjunction with the [MirrorCommand project](https://gitlab.com/doctorfree/MirrorCommand). These packages all depend upon the prior installation of [MirrorCommand version 3.0.2](https://gitlab.com/doctorfree/MirrorCommand/-/releases) or later.
 
 ### Installation
 
@@ -18,7 +18,7 @@ If your system(s) have only landscape mode displays then only the landscape mode
 
 Install the desired packages on Debian based systems by executing the command
 ```bash
-sudo apt install ./<PackageName>_3.0.0-2.deb
+sudo apt install ./<PackageName>_3.0.1-1.deb
 ```
 
 Where `<PackageName>` can be any of:
@@ -63,7 +63,7 @@ Where `<package-name>` can be any of:
 
 Install the desired packages on RPM based systems by executing the command
 ```bash
-sudo yum install ./<PackageName>_3.0.0-2.rpm
+sudo yum install ./<PackageName>_3.0.1-1.rpm
 ```
 
 Where `<PackageName>` can be any of:
